@@ -11,11 +11,64 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+ 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <script language="JavaScript">
+    function doSearch(){
+        const tableReg = document.getElementById('datos');
+        const searchText = document.getElementById('searchTerm').value.toLowerCase();
+        let total = 0;
+        
+        for (let i = 1; i < tableReg.rows.length; i++) {
+       
+            if (tableReg.rows[i].classList.contains("noSearch")) {continue;}
+                
+                let found = false;
+                const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+               
+                for (let j = 0; j < cellsOfRow.length && !found; j++) {
+                const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+        
+                if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+                    found = true;
+                    total++;
+                }
+            }
+    
+            if (found) {
+                tableReg.rows[i].style.display = '';
+            } else {
+                tableReg.rows[i].style.display = 'none';
+            }
+            }
+            // mostramos las coincidencias
+        const lastTR=tableReg.rows[tableReg.rows.length-1];
+        const td=lastTR.querySelector("td");
+        lastTR.classList.remove("hide", "red");
+        if (searchText == "") {
+            lastTR.classList.add("hide");
+        } else if (total) {
+            td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+        } else {
+            lastTR.classList.add("red");
+            td.innerHTML="No se han encontrado coincidencias";
+        }
+    }
+    
+    </script>
+    
+    <script language="JavaScript">
+    
+    </script>
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 

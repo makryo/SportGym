@@ -28,13 +28,10 @@
                                     <div class="card-body">
                                     <h5 class="card-title">Registro de clientes</h5>
                                     <p class="card-text">Ingresa, lista y edita los datos de los clientes</p>
-                                    <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary btn-lg">Nuevo cliente</a>
+                                    <a href="{{ route('cliente.create') }}" class="btn btn-outline-primary btn-lg">Nuevo cliente</a>
                                     <br>
                                     <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Lista de clientes</a>
-                                    <br>
-                                    <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Gestionar clientes</a>
+                                    <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary btn-lg">Gestionar clientes</a>
                                 </div>
                             </div>
                         </div>
@@ -45,13 +42,10 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Registro de asistencia</h5>
                                     <p class="card-text">Ingresa, verifica y lista los datos de la asistencia</p>
-                                    <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary btn-lg">Nuevo ingreso</a>
+                                    <a href="{{ route('asistencia.create') }}" class="btn btn-outline-primary btn-lg">Nuevo ingreso</a>
                                     <br>
                                     <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Lista de asistencias</a>
-                                    <br>
-                                    <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Gestionar asistencias</a>
+                                    <a href="{{ route('asistencia.index') }}" class="btn btn-outline-primary btn-lg">Gestionar asistencias</a>
                                 </div>
                             </div>
                         </div>
@@ -62,13 +56,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Generar reportes</h5>
                                     <p class="card-text">Genere los reportes para entrega</p>
-                                    <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary btn-lg">Generar informe por mes</a>
+                                    <a href="{{ route('asistencia.index') }}" class="btn btn-outline-primary btn-lg">Generar informe por mes</a>
                                     <br>
                                     <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Generar informe por semana</a>
-                                    <br>
-                                    <br>
-                                    <a href="#" class="btn btn-outline-primary btn-lg">Generar lista de clientes</a>
+                                    <a href="{{ route('print') }}" class="btn btn-outline-primary btn-lg">Generar lista de clientes</a>
+                                    
                                 </div>
                             </div>
                         </div>

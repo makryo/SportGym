@@ -22,3 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/cliente', 'ClienteController');
+Route::resource('/asistencia', 'asistenciaController');
+
+Route::get('/tablas', 'TaskController')->name('tablas');
+ 
+Route::get('/tablas/tasks', 'GetTaskController')->name('datatable.tasks');
+
+Route::name('print')->get('/imprimir', 'GeneradorController@imprimir');
+
+

@@ -16,6 +16,10 @@ class CreateAsistenciasTable extends Migration
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
             $table->string('token');
+
+            $table->bigInteger('nom_cliente')->unsigned();
+            $table->foreign('nom_cliente')->references('id')->on('clientes');
+
             $table->timestamps();
         });
     }
